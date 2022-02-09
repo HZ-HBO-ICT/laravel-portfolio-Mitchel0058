@@ -26,11 +26,9 @@ Route::get('/posts/{post}', function ($post) {
         'my-second-post' => 'Now I am getting the hang of this blogging thing.'
     ];
 
-    // This does not work atm ↓
     if (!array_key_exists($post, $posts)) {
         abort(404, 'Sorry, that post was not found.');
     }
-    // You get the basic 404 page
 
     return view('post', [
         'post' => $posts[$post]

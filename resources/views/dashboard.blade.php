@@ -52,26 +52,26 @@
             <td>Programme and Career Orientation</td>
             <td>2,5</td>
             <td>Assesment exam</td>
-            <td>N/A</td>
+            <td>8.4</td>
         </tr>
         <tr>
             <td>Computer Science Basics</td>
             <td>5</td>
             <td>Written Exam</td>
-            <td>N/A</td>
+            <td>6.0</td>
         </tr>
         <tr>
             <td>Programming Basics</td>
             <td>5</td>
             <td>Case study exam</td>
-            <td>N/A</td>
+            <td>6.9</td>
         </tr>
         <tr>
             <td rowspan="2">2</td>
             <td rowspan="2">Object Oriented Programming</td>
             <td rowspan="2">10</td>
             <td>Case study</td>
-            <td rowspan="2">N/A</td>
+            <td rowspan="2">7.7</td>
         </tr>
         <tr>
             <td>Project</td>
@@ -109,7 +109,7 @@
 </table>
 
 <label for="ec" class="progressec">Route naar geen NBSA</label>
-<progress id="ec" class="progressec" value="1" max="45"></progress>
+<progress id="ec" class="progressec" value="12.5" max="45"></progress>
 
 </body>
 
