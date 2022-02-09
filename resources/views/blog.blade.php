@@ -40,7 +40,7 @@
     <div class="blog1container">
         <div class="blog1">Studiekeuze en Programmeerervaring<br>
             <em>13-10-2021</em>
-            <a href="studiekeuze-en-programeerervaring-post"><em>Lees meer...</em></a>
+            <a href="blog/studiekeuze-en-programmeerervaring"><em>Lees meer...</em></a>
         </div>
     </div>
 
@@ -49,7 +49,7 @@
             ons op school kwamen.
             Hierover heb ik een post gemaakt met informatie over deze bedrijven.<br>
             <em>10-09-2021</em>
-            <a href="schoolsafari-post"><em>Lees meer...</em></a>
+            <a href="blog/schoolsafari"><em>Lees meer...</em></a>
         </div>
     </div>
 
@@ -58,7 +58,7 @@
             "Ja ik ben er wel een tijd zat mee geweest." zei hij.<br>
             "Zo moest ik bijvoorbeeld een blog pagina maken."<br>
             <em>08-09-2021</em>
-            <a href="student-maakt-website-post"><em>Lees meer...</em></a>
+            <a href="blog/student-maakt-website"><em>Lees meer...</em></a>
         </div>
     </div>
 
