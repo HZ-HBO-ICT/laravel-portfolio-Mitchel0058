@@ -2,24 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
-    function show($post)
+    function show($slug)
     {
-        $posts = [
-            'schoolsafari' => 'schoolsafari post',
-            'student-maakt-website' => 'student maakt website',
-            'studiekeuze-en-programmeerervaring' => 'studiekeuze en programmeerervaring',
-        ];
+        $post = Post::where('slug', $slug)->firstOrFail();
 
-        // This does not work atm ↓
-        if (!array_key_exists($post, $posts)) {
-            abort(404, 'Page not found AAAAAAAAAAAAAa');
-        }
-        // You get the basic 404 page
-
-        return view('posts/' . $post);
+        return view('posts/' . $post->slug);
     }
 }
