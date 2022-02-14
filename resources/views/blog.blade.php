@@ -1,39 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Blog posts</title>
-</head>
-
-<body>
-<ul class="navbar">
-    <li>
-        <nav>Links:</nav>
-    </li>
-    <li class="active">
-        <nav><a href="/" class="different-page">Home</a></nav>
-    </li>
-    <li class="active">
-        <nav><a href="profile" class="different-page">Profile</a></nav>
-    </li>
-    <li class="active">
-        <nav><a href="dashboard" class="different-page">Dashboard</a></nav>
-    </li>
-    <li class="active">
-        <nav><a href="faq" class="different-page">FAQ</a></nav>
-    </li>
-    <li class="active">
-        <nav><a href="blog" class="current-page">Blog</a></nav>
-    </li>
-    <li class="active">
-        <nav><a href="aside" class="different-page">Aside</a></nav>
-    </li>
-</ul>
-<p class="footer">Gemaakt door:<br> Mitchel Goedegebuure</p>
+@extends('layout');
+@section('content')
 <main>
     <h1>Blog</h1>
 
@@ -63,8 +29,8 @@
     </div>
 
 </main>
+@endsection
 
-</body>
 <!-- Copy this for post
   <div class="blog1container">
       <div class="blog1">Text Here<br>
@@ -72,5 +38,3 @@
       <a href="link.html here"><em>Lees meer...</em></a></div>
     </div>
 -->
-
-</html>

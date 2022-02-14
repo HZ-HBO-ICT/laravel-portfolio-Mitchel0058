@@ -1,41 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The main page of 'me'</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-<ul class="navbar">
-    <li>
-        <nav>Links:</nav>
-    </li>
-    <li class="active">
-        <nav><a href="/" class="current-page">Home</a></nav>
-    </li>
-    <li class="active">
-        <nav><a href="profile" class="different-page">Profile</a></nav>
-    </li>
-    <li class="active">
-        <nav><a href="dashboard" class="different-page">Dashboard</a></nav>
-    </li>
-    <li class="active">
-        <nav><a href="faq" class="different-page">FAQ</a></nav>
-    </li>
-    <li class="active">
-        <nav><a href="blog" class="different-page">Blog</a></nav>
-    </li>
-    <li class="active">
-        <nav><a href="aside" class="different-page">Aside</a></nav>
-    </li>
-</ul>
-
-<p class="footer">Gemaakt door:<br> Mitchel Goedegebuure</p>
-
+@extends('layout');
+@section('content');
 <img src="https://logos-download.com/wp-content/uploads/2019/01/HZ_University_of_Applied_Sciences_Logo.png"
      alt="HZ logo" id="hzlogo">
 
@@ -63,6 +27,4 @@
         </p>
     </h2>
 </main>
-</body>
-
-</html>
+@endsection
