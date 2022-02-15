@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
-    function show()
+    public function show()
     {
 
         $posts = Faq::all();

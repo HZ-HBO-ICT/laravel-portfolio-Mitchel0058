@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
-    function show($slug)
+    public function show($slug)
     {
         $post = Post::where('slug', $slug)->firstOrFail();
 

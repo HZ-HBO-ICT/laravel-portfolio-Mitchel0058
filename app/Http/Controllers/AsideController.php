@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class AsideController extends Controller
 {
-    function show()
+    public function show()
     {
 
         return view('aside');
