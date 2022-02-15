@@ -8,7 +8,7 @@ class DashboardController extends Controller
 {
     public function show()
     {
-        $grades = Grade::all();
+        $grades = \App\Models\Grade::all();
 
         return view('dashboard', [
             'grades' => $grades
