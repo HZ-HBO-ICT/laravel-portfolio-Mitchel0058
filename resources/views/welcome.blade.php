@@ -14,7 +14,6 @@
                 Linksboven zie je de navigatiebar, en die werkt nu helemaal!<br>
                 Wat doorkrast staat klopt dus niet meer.<br>
                 Maar hij doet bij inzoemen wel bijna heel de achterkant van het scherm vullen.<br>
-                <s>Doe alsjeblieft niet in of uit zoemen, tenzij je geen navigatiebar meer wil kunnen zien.</s>
             </p>
         </article>
         <img src="/img/profilepic.jpg" alt="my hz pic" id="mepic">

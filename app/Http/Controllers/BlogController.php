@@ -8,7 +8,10 @@ class BlogController extends Controller
 {
     public function show()
     {
+        $blogposts = \App\Models\Blogposts::latest('date_added')->get();
 
-        return view('blog');
+        return view('blog', [
+            'blogposts' => $blogposts
+        ]);
     }
 }

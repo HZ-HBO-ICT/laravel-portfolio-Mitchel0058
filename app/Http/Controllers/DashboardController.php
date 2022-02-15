@@ -8,7 +8,11 @@ class DashboardController extends Controller
 {
     public function show()
     {
+        $grades = Grade::all();
 
-        return view('dashboard');
+        return view('dashboard', [
+            'grades' => $grades
+        ]);
     }
 }
+

@@ -7,6 +7,7 @@
 
 <table>
     <article>
+        @foreach($grades as $grade)
         <tr>
             <th>Quartile</th>
             <th>Course</th>
@@ -25,13 +26,13 @@
             <td>Computer Science Basics</td>
             <td>5</td>
             <td>Written Exam</td>
-            <td>6.0</td>
+            <td>6.9</td>
         </tr>
         <tr>
             <td>Programming Basics</td>
             <td>5</td>
             <td>Case study exam</td>
-            <td>6.9</td>
+            <td>6.0</td>
         </tr>
         <tr>
             <td rowspan="2">2</td>
