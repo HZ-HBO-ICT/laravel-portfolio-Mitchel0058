@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The main page of 'me'</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -18,13 +18,11 @@
     </li>
     <?php $sites = ['/', 'profile', 'dashboard', 'faq', 'blog', 'aside'] ?>
     @foreach($sites as $site)
-        @if(Request::is($site) ? $page = 'current-page' : $page = 'different-page') @endif
-
+        @if(Request::is($site) || Request::is("$site/*") ? $page = 'current-page' : $page = 'different-page') @endif
+        @if($site == '/' ? $appearance = 'Home' : $appearance = ucfirst($site)) @endif
+        @if($site != '/' ? $site = "/$site" : null) @endif
         <li class="active">
-            @if ($site == '/' ? $appearance = 'Home' : $appearance = ucfirst($site))
-                <nav><a href="{{ $site }}" class="{{ $page }}">{{ $appearance }}</a></nav>
-
-            @endif
+            <nav><a href="{{ $site }}" class="{{ $page }}">{{ $appearance }}</a></nav>
         </li>
     @endforeach
 </ul>

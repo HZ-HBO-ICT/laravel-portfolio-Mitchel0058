@@ -23,8 +23,10 @@ use App\Http\Controllers\PostsController;
 Route::get('/', [WelcomeController::class, 'show']);
 Route::get('/profile', [ProfileController::class, 'show']);
 Route::get('/dashboard', [DashboardController::class, 'show']);
-Route::get('/faq', [FaqController::class, 'show']);
-Route::get('/blog', [BlogController::class, 'show']);
+Route::post('/faq', [FaqController::class, 'store']);
+Route::get('/faq/create', [FaqController::class, 'create']);
+Route::get('/faq', [FaqController::class, 'index']);
+Route::get('/blog', [BlogController::class, 'index']);
 Route::get('/aside', [AsideController::class, 'show']);
 Route::get('/blog/{post}', [PostsController::class, 'show']);
 
