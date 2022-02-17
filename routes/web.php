@@ -23,11 +23,18 @@ use App\Http\Controllers\PostsController;
 Route::get('/', [WelcomeController::class, 'show']);
 Route::get('/profile', [ProfileController::class, 'show']);
 Route::get('/dashboard', [DashboardController::class, 'show']);
-Route::post('/faq', [FaqController::class, 'store']);
+Route::get('/aside', [AsideController::class, 'show']);
+
+Route::put('/faq/edit/{id}', [FaqController::class, 'update']);
+Route::post('/faq/create', [FaqController::class, 'store']);
+Route::get('/faq/edit/{id}', [FaqController::class, 'edit']);
 Route::get('/faq/create', [FaqController::class, 'create']);
 Route::get('/faq', [FaqController::class, 'index']);
-Route::get('/blog', [BlogController::class, 'index']);
-Route::get('/aside', [AsideController::class, 'show']);
-Route::get('/blog/{post}', [PostsController::class, 'show']);
 
-// php artisan make:controller <NameController>
+Route::put('/blog/edit/{id}', [BlogController::class, 'update']);
+Route::post('/blog', [BlogController::class, 'store']);
+Route::get('/blog/edit/{id}', [BlogController::class, 'edit']);
+Route::get('/blog/create', [BlogController::class, 'create']);
+Route::get('/blog/{post}', [PostsController::class, 'show']);
+Route::get('/blog', [BlogController::class, 'index']);
+

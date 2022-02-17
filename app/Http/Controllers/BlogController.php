@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -23,22 +24,30 @@ class BlogController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        //
+        return view('blog-create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        //
+        $blogpost = new \App\Models\Blogposts();
+
+        $blogpost->main_text = request('main_text');
+        $blogpost->date_added = now();
+        $blogpost->link = request('link');
+
+        $blogpost->save();
+
+        return redirect('/blog');
     }
 
     /**
@@ -56,11 +65,18 @@ class BlogController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        if (($blogpost = \App\Models\Blogposts::find($id)) === null) {
+            abort(404);
+        };
+
+
+        return view('blog-edit', [
+            'blogpost' => $blogpost
+        ]);
     }
 
     /**
@@ -68,11 +84,18 @@ class BlogController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
-        //
+        $blog = \App\Models\Blogposts::find($id);
+        $blog->updated_at = now();
+        $blog->main_text = request('main_text');
+        $blog->link = request('link');
+
+        $blog->save();
+
+        return redirect('/blog');
     }
 
     /**
