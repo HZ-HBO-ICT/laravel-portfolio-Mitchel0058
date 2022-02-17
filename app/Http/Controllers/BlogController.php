@@ -73,7 +73,6 @@ class BlogController extends Controller
             abort(404);
         };
 
-
         return view('blog-edit', [
             'blogpost' => $blogpost
         ]);
@@ -88,12 +87,12 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $blog = \App\Models\Blogposts::find($id);
-        $blog->updated_at = now();
-        $blog->main_text = request('main_text');
-        $blog->link = request('link');
+        $blogpost = \App\Models\Blogposts::find($id);
+        $blogpost->updated_at = now();
+        $blogpost->main_text = request('main_text');
+        $blogpost->link = request('link');
 
-        $blog->save();
+        $blogpost->save();
 
         return redirect('/blog');
     }
@@ -102,11 +101,16 @@ class BlogController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function destroy($id)
     {
-        //
+        if (($blogpost = \App\Models\Blogposts::find($id)) === null) {
+            abort(404);
+        };
+        $blogpost->delete();
+
+        return redirect('/blog');
     }
 
 }

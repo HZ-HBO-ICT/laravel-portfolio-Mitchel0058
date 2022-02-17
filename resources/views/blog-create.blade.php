@@ -2,7 +2,7 @@
 @section('content')
     <main>
         <h1>New blog</h1>
-        <form method="post" action="/blog">
+        <form method="POST" action="/blog">
             @csrf
 
             <div class="field">

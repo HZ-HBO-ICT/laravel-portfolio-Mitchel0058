@@ -34,6 +34,13 @@
                 </div>
             </div>
 
+            <br>
+
+            <form method="POST" action="/faq/edit/{{ $faq->id }}">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Delete</button>
+            </form>
 
         </form>
     </main>
