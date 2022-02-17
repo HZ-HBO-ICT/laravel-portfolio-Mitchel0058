@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function show()
     {
         $grades = \App\Models\Grade::all();
@@ -15,4 +18,3 @@ class DashboardController extends Controller
         ]);
     }
 }
-
