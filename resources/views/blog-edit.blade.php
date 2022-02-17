@@ -2,7 +2,7 @@
 @section('content')
     <main>
         <h1>Edit blog</h1>
-        <form method="POST" action="/blog/edit/{{ $blogpost->id }}">
+        <form method="POST" action="/blog/{{ $blogpost->id }}">
             @csrf
             @method('PUT')
 
@@ -31,7 +31,7 @@
 
         <br>
 
-        <form method="POST" action="/blog/edit/{{ $blogpost->id }}">
+        <form method="POST" action="/blog/{{ $blogpost->id }}">
             @csrf
             @method('DELETE')
             <button type="submit">Delete</button>

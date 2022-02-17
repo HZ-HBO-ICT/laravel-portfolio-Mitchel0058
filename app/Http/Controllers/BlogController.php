@@ -54,11 +54,13 @@ class BlogController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show($id)
     {
-        //
+        $post = \App\Models\Post::where('slug', $id)->firstOrFail();
+
+        return view('posts/' . $post->slug);
     }
 
     /**

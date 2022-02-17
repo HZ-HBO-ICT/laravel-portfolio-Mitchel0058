@@ -2,7 +2,7 @@
 @section('content')
     <main>
         <h1>Update Article</h1>
-        <form method="POST" action="/faq/edit/{{ $faq->id }}">
+        <form method="POST" action="/faq/{{ $faq->id }}">
             @csrf
             @method('PUT')
 
@@ -16,7 +16,8 @@
             <div class="field">
                 <label class="label" for="answer">Answer</label>
                 <div class="control">
-                    <textarea class="input" type="text" name="answer" id="answer" cols="75" rows="10">{{ $faq->answer }}</textarea>
+                    <textarea class="input" type="text" name="answer" id="answer" cols="75"
+                              rows="10">{{ $faq->answer }}</textarea>
                 </div>
             </div>
 
@@ -33,15 +34,16 @@
                     <button class="button-is-text">Submit</button>
                 </div>
             </div>
-
-            <br>
-
-            <form method="POST" action="/faq/edit/{{ $faq->id }}">
-                @csrf
-                @method('DELETE')
-                <button type="submit">Delete</button>
-            </form>
-
         </form>
+
+        <br>
+
+        <form method="POST" action="/faq/{{ $faq->id }}">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Delete</button>
+        </form>
+
+
     </main>
 @endsection
