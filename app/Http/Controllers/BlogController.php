@@ -114,5 +114,4 @@ class BlogController extends Controller
 
         return redirect('/blog');
     }
-
 }
