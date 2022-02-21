@@ -8,21 +8,37 @@
             <div class="field">
                 <label class="label" for="question">Question</label>
                 <div class="control">
-                    <input class="input" type="text" name="question" id="question">
+                    <input
+                        class="@error('question') is-invalid @enderror"
+                        type="text"
+                        name="question"
+                        id="question"
+                        value="{{ old('question') }}">
                 </div>
             </div>
+
+            @error('question')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
 
             <div class="field">
                 <label class="label" for="answer">Answer</label>
                 <div class="control">
-                    <textarea class="input" type="text" name="answer" id="answer"></textarea>
+                    <textarea
+                        class="@error('answer') is-invalid @enderror"
+                        type="text"
+                        name="answer"
+                        id="answer">{{ old('answer') }}</textarea>
                 </div>
             </div>
+
+            @error('answer')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
 
             <div class="field">
                 <label class="label" for="link">Link</label>
                 <div class="control">
-
                     <input class="input" type="text" name="link" id="link">
                 </div>
             </div>

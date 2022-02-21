@@ -40,6 +40,11 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
+        request()->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
+
         $faq = new Faq();
 
         $faq->question = request('question');
@@ -88,6 +93,11 @@ class FaqController extends Controller
      */
     public function update(Request $request, $id)
     {
+        request()->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
+
         $faq = Faq::find($id);
         $faq->question = request('question');
         $faq->answer = request('answer');

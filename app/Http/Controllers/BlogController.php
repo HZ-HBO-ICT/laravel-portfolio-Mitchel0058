@@ -39,6 +39,11 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        request()->validate([
+            'main_text' => 'required',
+            'link' => 'required'
+        ]);
+
         $blogpost = new \App\Models\Blogposts();
 
         $blogpost->main_text = request('main_text');
@@ -89,6 +94,11 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
+        request()->validate([
+            'main_text' => 'required',
+            'link' => 'required'
+        ]);
+
         $blogpost = \App\Models\Blogposts::find($id);
         $blogpost->updated_at = now();
         $blogpost->main_text = request('main_text');
