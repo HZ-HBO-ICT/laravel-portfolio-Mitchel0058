@@ -40,18 +40,11 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
+        Faq::create($request->validate([
             'question' => 'required',
-            'answer' => 'required'
-        ]);
-
-        $faq = new Faq();
-
-        $faq->question = request('question');
-        $faq->answer = request('answer');
-        $faq->link = request('link');
-
-        $faq->save();
+            'answer' => 'required',
+            'link' => 'nullable'
+        ]));
 
         return redirect('/faq');
     }
@@ -73,12 +66,8 @@ class FaqController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Faq $faq)
     {
-        if (($faq = Faq::find($id)) === null) {
-            abort(404);
-        };
-
         return view('faq-edit', [
             'faq' => $faq
         ]);
@@ -91,17 +80,14 @@ class FaqController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Faq $faq)
     {
-        request()->validate([
+        $faq->update($request->validate([
             'question' => 'required',
-            'answer' => 'required'
-        ]);
+            'answer' => 'required',
+            'link' => 'nullable'
+        ]));
 
-        $faq = Faq::find($id);
-        $faq->question = request('question');
-        $faq->answer = request('answer');
-        $faq->link = request('link');
         $faq->updated_at = now();
         $faq->save();
 
@@ -114,12 +100,8 @@ class FaqController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
+    public function destroy(Faq $faq)
     {
-        if (($faq = Faq::find($id)) === null) {
-            abort(404);
-        };
-
         $faq->delete();
 
         return redirect('/faq');

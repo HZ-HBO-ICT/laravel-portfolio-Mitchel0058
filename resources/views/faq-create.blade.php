@@ -28,7 +28,9 @@
                         class="@error('answer') is-invalid @enderror"
                         type="text"
                         name="answer"
-                        id="answer">{{ old('answer') }}</textarea>
+                        id="answer"
+                        cols="75"
+                        rows="10">{{ old('answer') }}</textarea>
                 </div>
             </div>
 

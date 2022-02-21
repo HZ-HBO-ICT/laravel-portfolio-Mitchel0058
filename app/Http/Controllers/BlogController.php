@@ -39,7 +39,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
+        $request->validate([
             'main_text' => 'required',
             'link' => 'required'
         ]);
@@ -76,9 +76,7 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        if (($blogpost = \App\Models\Blogposts::find($id)) === null) {
-            abort(404);
-        };
+        $blogpost = \App\Models\Blogposts::findOrFail($id);
 
         return view('blog-edit', [
             'blogpost' => $blogpost
@@ -94,7 +92,7 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        request()->validate([
+        $request->validate([
             'main_text' => 'required',
             'link' => 'required'
         ]);
@@ -117,9 +115,8 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        if (($blogpost = \App\Models\Blogposts::find($id)) === null) {
-            abort(404);
-        };
+        $blogpost = \App\Models\Blogposts::findOrFail($id);
+
         $blogpost->delete();
 
         return redirect('/blog');
