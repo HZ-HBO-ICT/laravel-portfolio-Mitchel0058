@@ -27,7 +27,7 @@
     @endforeach
 </ul>
 
-@yield('content');
+@yield('content')
 
 </body>
 </html>

@@ -25,5 +25,6 @@ Route::get('/profile', [ProfileController::class, 'show']);
 Route::get('/dashboard', [DashboardController::class, 'show']);
 Route::get('/aside', [AsideController::class, 'show']);
 
+Route::resource('/grade', \App\Http\Controllers\GradeController::class);
 Route::resource('/faq', FaqController::class);
 Route::resource('/blog', BlogController::class);

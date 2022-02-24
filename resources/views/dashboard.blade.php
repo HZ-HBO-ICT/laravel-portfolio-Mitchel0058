@@ -1,4 +1,4 @@
-@extends('layout');
+@extends('layout')
 @section('content')
     <body class="grid-container">
     <main>

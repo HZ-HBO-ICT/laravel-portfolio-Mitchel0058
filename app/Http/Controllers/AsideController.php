@@ -11,7 +11,6 @@ class AsideController extends Controller
      */
     public function show()
     {
-
         return view('aside');
     }
 }

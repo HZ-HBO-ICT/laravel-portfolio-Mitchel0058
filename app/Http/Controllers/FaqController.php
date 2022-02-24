@@ -88,9 +88,6 @@ class FaqController extends Controller
             'link' => 'nullable'
         ]));
 
-        $faq->updated_at = now();
-        $faq->save();
-
         return redirect('/faq');
     }
 

@@ -1,5 +1,5 @@
-@extends('layout');
-@section('content');
+@extends('layout')
+@section('content')
 <main>
     <h1>FAQ</h1>
     <article>

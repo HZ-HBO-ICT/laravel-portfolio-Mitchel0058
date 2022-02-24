@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Blogposts;
 
 class BlogController extends Controller
 {
@@ -14,7 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogposts = \App\Models\Blogposts::latest('date_added')->get();
+        $blogposts = Blogposts::latest('date_added')->get();
 
         return view('blog', [
             'blogposts' => $blogposts
@@ -44,7 +44,7 @@ class BlogController extends Controller
             'link' => 'required'
         ]);
 
-        $blogpost = new \App\Models\Blogposts();
+        $blogpost = new Blogposts();
 
         $blogpost->main_text = request('main_text');
         $blogpost->date_added = now();
@@ -76,7 +76,7 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        $blogpost = \App\Models\Blogposts::findOrFail($id);
+        $blogpost = Blogposts::findOrFail($id);
 
         return view('blog-edit', [
             'blogpost' => $blogpost
@@ -97,7 +97,7 @@ class BlogController extends Controller
             'link' => 'required'
         ]);
 
-        $blogpost = \App\Models\Blogposts::find($id);
+        $blogpost = Blogposts::find($id);
         $blogpost->updated_at = now();
         $blogpost->main_text = request('main_text');
         $blogpost->link = request('link');
@@ -115,7 +115,7 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        $blogpost = \App\Models\Blogposts::findOrFail($id);
+        $blogpost = Blogposts::findOrFail($id);
 
         $blogpost->delete();
 

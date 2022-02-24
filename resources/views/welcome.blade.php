@@ -1,5 +1,5 @@
-@extends('layout');
-@section('content');
+@extends('layout')
+@section('content')
 <img src="https://logos-download.com/wp-content/uploads/2019/01/HZ_University_of_Applied_Sciences_Logo.png"
      alt="HZ logo" id="hzlogo">
 

@@ -1,4 +1,4 @@
-@extends('layout');
+@extends('layout')
 @section('content')
     <main>
         <h1>Blog</h1>

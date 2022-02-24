@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Course;
+use Database\Factories\CourseFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,7 +16,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            FaqSeeder::class
+//            FaqSeeder::class
+            CourseSeeder::class,
+            GradeSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
     }

@@ -24,7 +24,6 @@
             <div class="field">
                 <label class="label" for="link">Link</label>
                 <div class="control">
-
                     <input class="input" type="text" name="link" id="link" value="{{ $faq->link }}">
                 </div>
             </div>
